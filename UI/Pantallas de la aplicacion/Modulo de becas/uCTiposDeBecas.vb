@@ -16,19 +16,23 @@ Public Class uCTiposDeBecas
     ''' </summary>
     Public Sub onControlLoad() Handles MyBase.Load
 
-        Me.Dock = DockStyle.Fill
-        actualizarDatagrid()
+        Try
+            Me.Dock = DockStyle.Fill
+            actualizarDatagrid()
 
-        ' Permisos
-        btnAgregarTipoBeca.Visible = gestorAuth.tieneElPermiso(3)
-        btnModificarTipoBeca.Visible = gestorAuth.tieneElPermiso(4)
-        btnAsignarBeneficio.Visible = gestorAuth.tieneElPermiso(4)
-        btnAsignarRequisito.Visible = gestorAuth.tieneElPermiso(4)
-        btnAsignarCarrera.Visible = gestorAuth.tieneElPermiso(4)
-        btnEliminarTipoBeca.Visible = gestorAuth.tieneElPermiso(5)
+            ' Permisos
+            btnAgregarTipoBeca.Visible = gestorAuth.tieneElPermiso(3)
+            btnModificarTipoBeca.Visible = gestorAuth.tieneElPermiso(4)
+            btnAsignarBeneficio.Visible = gestorAuth.tieneElPermiso(4)
+            btnAsignarRequisito.Visible = gestorAuth.tieneElPermiso(4)
+            btnAsignarCarrera.Visible = gestorAuth.tieneElPermiso(4)
+            btnEliminarTipoBeca.Visible = gestorAuth.tieneElPermiso(5)
 
-        idTipoBeca = 0
+            idTipoBeca = 0
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     ''' <summary>
@@ -44,6 +48,10 @@ Public Class uCTiposDeBecas
             For Each tipoBeca As TipoBeca In lstTipoBeca
                 dgvTipoBecas.Rows.Add(tipoBeca.Id, tipoBeca.Nombre, tipoBeca.Descripcion, tipoBeca.Icono, tipoBeca.Color)
             Next
+
+            If dgvTipoBecas.RowCount > 0 Then
+                idTipoBeca = dgvTipoBecas.Item(0, 0).Value
+            End If
 
         Catch ex As Exception
 
@@ -202,9 +210,6 @@ Public Class uCTiposDeBecas
                 frmRequisitosAsignados.idTipoBeca = dgvTipoBecas.Item(0, row).Value
                 frmRequisitosAsignados.nombreTipoBeca = dgvTipoBecas.Item(1, row).Value
                 frmRequisitosAsignados.ShowDialog(Me)
-
-
-
             Catch ex As Exception
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -290,11 +295,11 @@ Public Class uCTiposDeBecas
 
     Private Sub gridListaDatos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTipoBecas.CellClick
 
-        idTipoBeca = dgvTipoBecas.Item(0, row).Value
-
+        Try
+            idTipoBeca = dgvTipoBecas.Item(0, row).Value
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
-
-
-
 End Class
