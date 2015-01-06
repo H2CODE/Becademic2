@@ -26,15 +26,14 @@ Partial Class frmActualizarTipoDeBeca
         Me.pnlModificarTipoDeBeca = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.txtColor = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtIcono = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.lblCantidad = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombreTipoBeca = New System.Windows.Forms.Label()
         Me.lblSubTitulo = New System.Windows.Forms.Label()
+        Me.ckbSocioeconomico = New System.Windows.Forms.CheckBox()
         Me.pnlContenidoPrincipal.SuspendLayout()
         Me.pnlModificarTipoDeBeca.SuspendLayout()
         Me.SuspendLayout()
@@ -50,12 +49,11 @@ Partial Class frmActualizarTipoDeBeca
         '
         'pnlModificarTipoDeBeca
         '
+        Me.pnlModificarTipoDeBeca.Controls.Add(Me.ckbSocioeconomico)
         Me.pnlModificarTipoDeBeca.Controls.Add(Me.btnCancelar)
         Me.pnlModificarTipoDeBeca.Controls.Add(Me.btnGuardar)
-        Me.pnlModificarTipoDeBeca.Controls.Add(Me.txtColor)
-        Me.pnlModificarTipoDeBeca.Controls.Add(Me.Label3)
-        Me.pnlModificarTipoDeBeca.Controls.Add(Me.txtIcono)
-        Me.pnlModificarTipoDeBeca.Controls.Add(Me.Label2)
+        Me.pnlModificarTipoDeBeca.Controls.Add(Me.txtCantidad)
+        Me.pnlModificarTipoDeBeca.Controls.Add(Me.lblCantidad)
         Me.pnlModificarTipoDeBeca.Controls.Add(Me.txtDescripcion)
         Me.pnlModificarTipoDeBeca.Controls.Add(Me.Label1)
         Me.pnlModificarTipoDeBeca.Controls.Add(Me.txtNombre)
@@ -94,41 +92,23 @@ Partial Class frmActualizarTipoDeBeca
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'txtColor
+        'txtCantidad
         '
-        Me.txtColor.Location = New System.Drawing.Point(135, 264)
-        Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(421, 26)
-        Me.txtColor.TabIndex = 11
-        Me.txtColor.Tag = "txtopcional"
+        Me.txtCantidad.Location = New System.Drawing.Point(135, 224)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(421, 26)
+        Me.txtCantidad.TabIndex = 11
+        Me.txtCantidad.Tag = "txtnum"
         '
-        'Label3
+        'lblCantidad
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label3.Location = New System.Drawing.Point(21, 269)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 17)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Color:"
-        '
-        'txtIcono
-        '
-        Me.txtIcono.Location = New System.Drawing.Point(135, 222)
-        Me.txtIcono.Name = "txtIcono"
-        Me.txtIcono.Size = New System.Drawing.Size(421, 26)
-        Me.txtIcono.TabIndex = 9
-        Me.txtIcono.Tag = "txtopcional"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label2.Location = New System.Drawing.Point(21, 227)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 17)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Icono:"
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.lblCantidad.Location = New System.Drawing.Point(21, 233)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(68, 17)
+        Me.lblCantidad.TabIndex = 10
+        Me.lblCantidad.Text = "Cantidad:"
         '
         'txtDescripcion
         '
@@ -178,6 +158,16 @@ Partial Class frmActualizarTipoDeBeca
         Me.lblSubTitulo.TabIndex = 3
         Me.lblSubTitulo.Text = "Modificar tipo de beca"
         '
+        'ckbSocioeconomico
+        '
+        Me.ckbSocioeconomico.AutoSize = True
+        Me.ckbSocioeconomico.Location = New System.Drawing.Point(135, 266)
+        Me.ckbSocioeconomico.Name = "ckbSocioeconomico"
+        Me.ckbSocioeconomico.Size = New System.Drawing.Size(145, 24)
+        Me.ckbSocioeconomico.TabIndex = 14
+        Me.ckbSocioeconomico.Text = "Socioeconomico"
+        Me.ckbSocioeconomico.UseVisualStyleBackColor = True
+        '
         'frmActualizarTipoDeBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -198,10 +188,8 @@ Partial Class frmActualizarTipoDeBeca
     End Sub
     Friend WithEvents pnlContenidoPrincipal As System.Windows.Forms.Panel
     Friend WithEvents pnlModificarTipoDeBeca As System.Windows.Forms.Panel
-    Friend WithEvents txtColor As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txtIcono As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
+    Friend WithEvents lblCantidad As System.Windows.Forms.Label
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
@@ -209,4 +197,5 @@ Partial Class frmActualizarTipoDeBeca
     Friend WithEvents lblSubTitulo As System.Windows.Forms.Label
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents ckbSocioeconomico As System.Windows.Forms.CheckBox
 End Class

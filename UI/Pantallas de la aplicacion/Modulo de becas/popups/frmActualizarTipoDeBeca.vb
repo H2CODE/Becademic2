@@ -36,8 +36,8 @@ Public Class frmActualizarTipoDeBeca
             Dim tipoBeca As TipoBeca = gestorTipoBeca.consultarTipoBecaById(idTipoBeca)
             txtNombre.Text = tipoBeca.Nombre
             txtDescripcion.Text = tipoBeca.Descripcion
-            txtIcono.Text = tipoBeca.Icono
-            txtColor.Text = tipoBeca.Color
+            ckbSocioeconomico.Checked = tipoBeca.Socioeconomico
+            txtCantidad.Text = tipoBeca.Cantidad
 
         Catch ex As Exception
 
@@ -88,7 +88,7 @@ Public Class frmActualizarTipoDeBeca
 
             If result = System.Windows.Forms.DialogResult.Yes Then
 
-                gestorTipoBeca.editarTipoBeca(idTipoBeca, txtNombre.Text, txtDescripcion.Text, txtIcono.Text, txtColor.Text, False, 10)
+                gestorTipoBeca.editarTipoBeca(idTipoBeca, txtNombre.Text, txtDescripcion.Text, "", "", ckbSocioeconomico.Checked, txtCantidad.Text)
                 MessageBox.Show("Se ha editado el tipo de beca exitosamente", "Modificar tipo de beca", MessageBoxButtons.OK)
             End If
         Catch ex As Exception

@@ -24,17 +24,16 @@ Partial Class frmAgregarTipoBeca
     Private Sub InitializeComponent()
         Me.pnlContenidoPrincipal = New System.Windows.Forms.Panel()
         Me.pnlAgregarTipoDeBeca = New System.Windows.Forms.Panel()
-        Me.txtIcono = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.txtColor = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombreTipoBeca = New System.Windows.Forms.Label()
         Me.lblSubTitulo = New System.Windows.Forms.Label()
+        Me.ckbSocioeconomico = New System.Windows.Forms.CheckBox()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.lblCantidad = New System.Windows.Forms.Label()
         Me.pnlContenidoPrincipal.SuspendLayout()
         Me.pnlAgregarTipoDeBeca.SuspendLayout()
         Me.SuspendLayout()
@@ -50,12 +49,11 @@ Partial Class frmAgregarTipoBeca
         '
         'pnlAgregarTipoDeBeca
         '
-        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.txtIcono)
+        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.ckbSocioeconomico)
+        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.txtCantidad)
+        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.lblCantidad)
         Me.pnlAgregarTipoDeBeca.Controls.Add(Me.btnCancelar)
         Me.pnlAgregarTipoDeBeca.Controls.Add(Me.btnGuardar)
-        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.txtColor)
-        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.Label3)
-        Me.pnlAgregarTipoDeBeca.Controls.Add(Me.Label2)
         Me.pnlAgregarTipoDeBeca.Controls.Add(Me.txtDescripcion)
         Me.pnlAgregarTipoDeBeca.Controls.Add(Me.Label1)
         Me.pnlAgregarTipoDeBeca.Controls.Add(Me.txtNombre)
@@ -67,14 +65,6 @@ Partial Class frmAgregarTipoBeca
         Me.pnlAgregarTipoDeBeca.Name = "pnlAgregarTipoDeBeca"
         Me.pnlAgregarTipoDeBeca.Size = New System.Drawing.Size(604, 411)
         Me.pnlAgregarTipoDeBeca.TabIndex = 3
-        '
-        'txtIcono
-        '
-        Me.txtIcono.Location = New System.Drawing.Point(135, 222)
-        Me.txtIcono.Name = "txtIcono"
-        Me.txtIcono.Size = New System.Drawing.Size(421, 26)
-        Me.txtIcono.TabIndex = 15
-        Me.txtIcono.Tag = "txtopcional"
         '
         'btnCancelar
         '
@@ -101,34 +91,6 @@ Partial Class frmAgregarTipoBeca
         Me.btnGuardar.TabIndex = 12
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'txtColor
-        '
-        Me.txtColor.Location = New System.Drawing.Point(135, 264)
-        Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(421, 26)
-        Me.txtColor.TabIndex = 11
-        Me.txtColor.Tag = "txtopcional"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label3.Location = New System.Drawing.Point(21, 269)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 17)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Color:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label2.Location = New System.Drawing.Point(21, 227)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 17)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Icono:"
         '
         'txtDescripcion
         '
@@ -178,6 +140,34 @@ Partial Class frmAgregarTipoBeca
         Me.lblSubTitulo.TabIndex = 3
         Me.lblSubTitulo.Text = "Agregar tipo de beca"
         '
+        'ckbSocioeconomico
+        '
+        Me.ckbSocioeconomico.AutoSize = True
+        Me.ckbSocioeconomico.Location = New System.Drawing.Point(135, 265)
+        Me.ckbSocioeconomico.Name = "ckbSocioeconomico"
+        Me.ckbSocioeconomico.Size = New System.Drawing.Size(145, 24)
+        Me.ckbSocioeconomico.TabIndex = 17
+        Me.ckbSocioeconomico.Text = "Socioeconomico"
+        Me.ckbSocioeconomico.UseVisualStyleBackColor = True
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(135, 223)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(421, 26)
+        Me.txtCantidad.TabIndex = 16
+        Me.txtCantidad.Tag = "txtnum"
+        '
+        'lblCantidad
+        '
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.lblCantidad.Location = New System.Drawing.Point(21, 232)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(68, 17)
+        Me.lblCantidad.TabIndex = 15
+        Me.lblCantidad.Text = "Cantidad:"
+        '
         'frmAgregarTipoBeca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -198,9 +188,6 @@ Partial Class frmAgregarTipoBeca
     End Sub
     Friend WithEvents pnlContenidoPrincipal As System.Windows.Forms.Panel
     Friend WithEvents pnlAgregarTipoDeBeca As System.Windows.Forms.Panel
-    Friend WithEvents txtColor As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
@@ -208,5 +195,7 @@ Partial Class frmAgregarTipoBeca
     Friend WithEvents lblSubTitulo As System.Windows.Forms.Label
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents txtIcono As System.Windows.Forms.TextBox
+    Friend WithEvents ckbSocioeconomico As System.Windows.Forms.CheckBox
+    Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
+    Friend WithEvents lblCantidad As System.Windows.Forms.Label
 End Class

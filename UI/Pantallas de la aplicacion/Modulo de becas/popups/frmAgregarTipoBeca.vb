@@ -45,7 +45,7 @@ Public Class frmAgregarTipoBeca
 
         Try
 
-            gestorTipoBeca.agregarTipoBeca(txtNombre.Text, txtDescripcion.Text, txtIcono.Text, txtColor.Text, False, 10)
+            gestorTipoBeca.agregarTipoBeca(txtNombre.Text, txtDescripcion.Text, "", "", ckbSocioeconomico.Checked, txtCantidad.Text)
             MessageBox.Show("Se ha agregado un nuevo tipo de beca exitosamente", "Agregar tipo de beca", MessageBoxButtons.OK)
             Me.Close()
 

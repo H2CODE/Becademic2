@@ -21,15 +21,15 @@ Public Class uCBeneficios
             actualizarDataGrid()
 
             dgvBeneficios.AutoResizeColumns()
+
+            idBeneficio = 0
+            BtnAgregar.Visible = gestorAuth.tieneElPermiso(7)
+            BtnModificar.Visible = gestorAuth.tieneElPermiso(8)
+            BtnEliminar.Visible = gestorAuth.tieneElPermiso(9)
             
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-        idBeneficio = 0
-        BtnAgregar.Visible = gestorAuth.tieneElPermiso(7)
-        BtnModificar.Visible = gestorAuth.tieneElPermiso(8)
-        BtnEliminar.Visible = gestorAuth.tieneElPermiso(9)
 
     End Sub
 

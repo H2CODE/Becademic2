@@ -24,6 +24,11 @@ Public Class uCRequisitos
             For Each requisito As Requisito In lstRequisito
                 gridListaDatos.Rows.Add(requisito.Id, requisito.TipoRequisito.Nombre, requisito.Nombre, requisito.Descripcion)
             Next
+
+            If gridListaDatos.RowCount > 0 Then
+                idRequisito = gridListaDatos.Item(0, 0).Value
+            End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -97,8 +102,13 @@ Public Class uCRequisitos
 
     Private Sub gridListaDatos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridListaDatos.CellClick
 
-        idRequisito = gridListaDatos.Item(0, row).Value
+        Try
+            row = gridListaDatos.CurrentRow.Index
+            idRequisito = gridListaDatos.Item(0, row).Value
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
