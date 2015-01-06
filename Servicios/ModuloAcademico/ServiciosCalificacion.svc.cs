@@ -49,12 +49,12 @@ namespace Servicios.ModuloAcademico
         }
 
         [OperationContract]
-        [WebGet(UriTemplate = "/crear?idUsuario={idUsuario}&idCurso={idCurso}&nota={nota}&periodo={periodo}&annio={annio}&comentarios={comentarios}", ResponseFormat = WebMessageFormat.Json)]
-        public void CrearCalificacion(int idUsuario, int idCurso, double nota, int periodo, int annio, string comentarios)
+        [WebGet(UriTemplate = "/crear?idUsuario={idUsuario}&idCurso={idCurso}&nota={nota}&periodo={periodo}&annio={annio}&comentario={comentario}", ResponseFormat = WebMessageFormat.Json)]
+        public void CrearCalificacion(string idUsuario, string idCurso, string nota, string periodo, string annio, string comentario)
         {
             //IEnumerable<TipoBeca> listaVieja = gestorCalificacion.consultarCalificaciones(int.Parse();
 
-            gestorCalificacion.agregarCalificacion(idUsuario, idCurso, nota, periodo, annio, comentarios);
+            gestorCalificacion.agregarCalificacion(int.Parse(idUsuario), int.Parse(idCurso), int.Parse(nota), int.Parse(periodo), int.Parse(annio), comentario);
 
             //IEnumerable<TipoBeca> listaNueva = gestorTipoBeca.consultarTipoBecas();
 
